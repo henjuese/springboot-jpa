@@ -1,12 +1,12 @@
 #服务信息
 info:
     app:
-        name: apricotforest-wechat
-        description: 病历夹微信服务
+        name: springboot-jpa
+        description: jpa微服务
         owner:
-            - HANJIAN
+            - bao
         emails:
-            - hanjian@xingshulin.com
+            - baowenwei@qq.com
         branch-name: @BRANCH_NAME@
         env: ${SPRING_PROFILES_ACTIVE}
         build-number: @BUILD_NUMBER@
