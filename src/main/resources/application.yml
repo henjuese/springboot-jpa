@@ -1,0 +1,70 @@
+#服务信息
+info:
+    app:
+        name: apricotforest-wechat
+        description: 病历夹微信服务
+        owner:
+            - HANJIAN
+        emails:
+            - hanjian@xingshulin.com
+        branch-name: @BRANCH_NAME@
+        env: ${SPRING_PROFILES_ACTIVE}
+        build-number: @BUILD_NUMBER@
+        build-url: @BUILD_URL@
+        java-version: ${java.version}
+
+
+
+#默认环境配置
+server:
+    port: 8080
+logging:
+    file: /logs/spring-jpa-dome/app.log
+management:
+    context-path: /manage
+
+#kafka 集群列表
+#apricotforest.kafka.brokerlist=192.168.100.81:9092
+
+spring:
+    #数据库
+    datasource:
+        url: jdbc:mysql://localhost:3306/mybatis?useUnicode=true&characterEncoding=UTF-8
+        username: root
+        password: root
+        driver-class-name: com.mysql.jdbc.Driver
+        initialSize: 5
+        minIdle: 5
+        maxActive: 10
+        testWhileIdle: true
+        maxWait: 1000
+        validationQuery:  SELECT 1
+
+    jpa:
+        hibernate:
+            naming:
+                physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+
+#dev环境相关配置,覆盖上面的默认配置
+---
+spring:
+    profiles: dev
+
+#pub环境相关配置,覆盖上面的默认配置
+---
+spring:
+    profiles: qa
+
+     #数据库
+    datasource:
+        url: jdbc:mysql://localhost:33306/mybatis?useUnicode=true&characterEncoding=UTF-8
+        username: root
+        password: root
+
+
+
+#prod环境相关配置,覆盖上面的默认配置
+---
+spring:
+    profiles: prod
