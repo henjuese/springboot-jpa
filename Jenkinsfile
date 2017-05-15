@@ -25,10 +25,11 @@ def mvn(args) {
 }
 
 def deploy(env) {
-    echo env
     dir('target') {
         sh "mkdir -p envs/$env"
         sh "cp spring-jap-dome.jar envs/$env"
+        sh "cd envs/$env"
+        sh "java -jar spring-jap-dome.jar"
     }
 }
 
