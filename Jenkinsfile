@@ -29,7 +29,7 @@ def deploy(env) {
         sh "mkdir -p envs/$env"
         sh "cp spring-jap-dome.jar envs/$env"
         sh "cd envs/$env"
-        sh "java -jar spring-jap-dome.jar"
+        sh "nohup java -jar spring-jap-dome.jar > /logs/casefolder-solution/app.log 2>&1 &"
         sh "echo $env"
     }
 }
