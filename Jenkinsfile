@@ -30,6 +30,7 @@ def deploy(env) {
         sh "cp spring-jap-dome.jar envs/$env"
         sh "cd envs/$env"
         sh "java -jar spring-jap-dome.jar"
+        sh "echo $env"
     }
 }
 
