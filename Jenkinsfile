@@ -9,7 +9,7 @@ node {
 
 stage 'Load a file from GitHub'
 
-def helloworld = fileLoader.fromGit('deploy/jenkins', 'http://baowenwei:baowenwei123@code.xingshulin.com/ServiceTeam/docker-deploy.git', 'master', null, '')
+def helloworld = fileLoader.fromGit('deploy/jenkins', 'git@code.xingshulin.com:ServiceTeam/docker-deploy.git', 'master', null, '')
 
 stage 'Run method from the loaded file'
 helloworld.printHello()
