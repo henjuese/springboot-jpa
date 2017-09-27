@@ -3,7 +3,7 @@
 stage 'package'
 node {
     checkout scm
-    mvn 'clean package'
+    mvn 'clean'
 }
 
 
