@@ -3,16 +3,6 @@ info:
     app:
         name: springboot-jpa
         description: jpa微服务
-        owner:
-            - bao
-        emails:
-            - baowenwei@qq.com
-        branch-name: @BRANCH_NAME@
-        env: ${SPRING_PROFILES_ACTIVE}
-        build-number: @BUILD_NUMBER@
-        build-url: @BUILD_URL@
-        java-version: ${java.version}
-
 
 
 #默认环境配置
@@ -22,10 +12,7 @@ logging:
     file: /logs/spring-jpa-dome/app.log
 management:
     context-path: /manage
-
-#kafka 集群列表
-#apricotforest.kafka.brokerlist=192.168.100.81:9092
-
+    
 spring:
     #数据库
     datasource:
